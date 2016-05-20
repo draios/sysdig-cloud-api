@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [REST API](rest_api.md)
-   * Getting Started
+   * [Getting Started](rest_api/getting_started.md)
 * [Getting Started](getting-started.md)
 * [Alerts](alerts.md)
 
