@@ -2,5 +2,5 @@
 
 * [Introduction](README.md)
 * [Getting Started](getting-started.md)
-* Alerts
+* [Alerts](alerts.md)
 
