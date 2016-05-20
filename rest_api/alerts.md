@@ -6,14 +6,9 @@
 
 **Request parameters**: None
 
-**Response**
-```
-{
-    "alerts": (list of alert)
-}
-```
+**Response parameters**
 
-* `alerts`: List of [alert]() items.
+* `alerts`: List of [alert](alerts.md#get-alert) items
 
 
 ## Get alert
@@ -22,35 +17,9 @@
 
 **Request parameters**: None
 
-**Response**
-```
-{
-    "alert": {
-        "id":                (number),
-        "version":           (number),
-        "createdOn":         (timestamp),
-        "modifiedOn":        (timestamp),
-        "type":              (type ID),
-        "name":              (string),
-        "enabled":           (boolean),
-        "filter":            (string),
-        "condition":         (string),
-        "segmentBy":         (array of string),
-        "segmentCondition":  {
-                                 "type": (segment type ID)
-                             },
-        "timespan":          (timespan),
-        "severity":          (number),
-        "notify":            (array),
-        "notificationCount": (number)
-    }
-}
-```
+**Response parameters**
 
 * `id`: 
-* `version`: 
-* `createdOn`: 
-* `modifiedOn`: 
 * `type`: 
 * `name`: 
 * `enabled`: 
@@ -61,4 +30,35 @@
 * `timespan`: 
 * `severity`: 
 * `notify`: 
+* `version`: 
+* `createdOn`: 
+* `modifiedOn`: 
 * `notificationCount`: 
+
+**Example**
+
+```
+GET /api/alerts/123
+
+{
+    "alert": {
+        "id":               123,
+        "version":          7,
+        "createdOn":        1459198751000,
+        "modifiedOn":       1460994864000,
+        "type":             "MANUAL",
+        "name":             "My Alert",
+        "enabled":           true,
+        "filter":            "cloudProvider.tag.Name = \"clients\"",
+        "severity":          7,
+        "notify":            [ "EMAIL" ],
+        "timespan":          60000000,
+        "notificationCount": 1,
+        "segmentBy":         [ "agent.tag.infrastructure" ],
+        "segmentCondition":  {
+            "type": "ANY"
+        },
+        "condition":         "max(sum(memory.used.percent)) >= 1"
+    }
+}
+```
