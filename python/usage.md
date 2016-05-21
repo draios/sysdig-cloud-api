@@ -22,5 +22,5 @@ Every method in the SdcClient class returns **a list with two entries**. The fir
 - If the call was successful, it's a dictionary reflecting the json returned by the underlying REST call
 - If the call failed, it's a string describing the error
 
-For an example on how to parse this output, take a look at a simple example like [get_data_simple.py](https://github.com/draios/python-sdc-client/examples/get_data_simple.py) 
+For an example on how to parse this output, take a look at a simple example like [get_data_simple.py](https://github.com/draios/python-sdc-client/blob/master/examples/get_data_simple.py) 
 
