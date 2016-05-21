@@ -8,4 +8,5 @@
 * [Python Script Library](python_script_library.md)
    * Installation
    * Quick Start
+   * Usage
 
