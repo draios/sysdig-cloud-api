@@ -11,6 +11,5 @@ This module is a wrapper around the Sysdig Cloud API, which is documented [here]
 
 * [Installation](installation.md)
 * [Quick Start](quick_start.md)
-
 * [Usage](usage.md)
 * [Reference](reference.md)
