@@ -35,3 +35,25 @@ Here is a list of conventions used by the REST API for resources:
         "alert": { ... }
     }
     ```
+
+## Encoding
+
+The request should set the HTTP header
+
+```
+Accept: application/json
+```
+
+while every response is returned with the HTTP header
+
+```
+Content-Type: application/json;charset=UTF-8
+```
+
+In order to reduce the size of the request and mainly the response, you can set the header
+
+```
+Accept-Encoding:gzip, deflate, sdch
+```
+
+to compress HTTP body and response.
