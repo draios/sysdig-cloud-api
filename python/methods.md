@@ -23,7 +23,7 @@ Adds a panel to the dashboard. A panel can be a time series, or a top chart (i.e
 A dictionary showing the details of the edited dashboard.
 
 **Example**  
-[examples/dashboard.py](examples/dashboard.py).
+[examples/dashboard.py](https://github.com/draios/python-sdc-client/examples/dashboard.py).
 
 #### `add_email_notification_recipient`
 **`(self, email)`**
@@ -36,7 +36,7 @@ Add a new recipient for email alert notifications.
 **Success Return Value**  
 A dictionary showing the updated user notifications configuration.  
 **Example**  
-[examples/add_notification_email.py](examples/add_notification_email.py).  
+[examples/add_notification_email.py](https://github.com/draios/python-sdc-client/examples/add_notification_email.py).  
 
 #### `create_alert`
 **`(self, name, description, severity, for_atleast_s, condition, segmentby = [], segment_condition = 'ANY', user_filter = '', notify='', enabled=True, annotations={})`**
@@ -59,7 +59,7 @@ Create a threshold-based alert.
 **Success Return Value**  
 A dictionary describing the just created alert, with the format described at [this link](https://app.sysdigcloud.com/apidocs/#!/Alerts/post_api_alerts).  
 **Example**  
-[examples/create_alert.py](examples/create_alert.py).  
+[examples/create_alert.py](https://github.com/draios/python-sdc-client/examples/create_alert.py).  
 
 #### `create_dashboard`
 **`(self, name)`**
@@ -74,7 +74,7 @@ Creates an empty dashboard. You can then add panels by using `add_dashboard_pane
 A dictionary showing the details of the new dashboard.
 
 **Example**  
-[examples/dashboard.py](examples/dashboard.py).
+[examples/dashboard.py](https://github.com/draios/python-sdc-client/examples/dashboard.py).
 
 #### `create_dashboard_from_dashboard`
 **`(self, newdashname, templatename, filter)`**
@@ -89,7 +89,7 @@ Create a new dasboard using one of the existing dashboards as a template. You wi
 **Success Return Value**  
 A dictionary showing the details of the new dashboard.  
 **Example**  
-[examples/create_dashboard.py](examples/create_dashboard.py).  
+[examples/create_dashboard.py](https://github.com/draios/python-sdc-client/examples/create_dashboard.py).  
 
 #### `create_dashboard_from_view`
 **`(self, newdashname, viewname, filter)`**
@@ -104,7 +104,7 @@ Create a new dasboard using one of the Sysdig Cloud views as a template. You wil
 **Success Return Value**  
 A dictionary showing the details of the new dashboard.  
 **Example**  
-[examples/create_dashboard.py](examples/create_dashboard.py).  
+[examples/create_dashboard.py](https://github.com/draios/python-sdc-client/examples/create_dashboard.py).  
 
 #### `create_sysdig_capture`
 **`(self, hostname, capture_name, duration, capture_filter='', folder='/')`**
@@ -121,7 +121,7 @@ Create a new sysdig capture. The capture will be immediately started.
 **Success Return Value**  
 A dictionary showing the details of the new capture.  
 **Example**  
-[examples/create_sysdig_capture.py](examples/create_sysdig_capture.py).  
+[examples/create_sysdig_capture.py](https://github.com/draios/python-sdc-client/examples/create_sysdig_capture.py).  
 
 #### `delete_alert`
 **`(self, alert)`**
@@ -134,7 +134,7 @@ Deletes an alert.
 **Success Return Value**  
 `None`.  
 **Example**  
-[examples/delete_alert.py](examples/delete_alert.py).  
+[examples/delete_alert.py](https://github.com/draios/python-sdc-client/examples/delete_alert.py).  
 
 #### `delete_dashboard`
 **`(self, dashboard)`**
@@ -147,7 +147,7 @@ Deletes a dashboard.
 **Success Return Value**  
 `None`.  
 **Example**  
-[examples/delete_dashboard.py](examples/delete_dashboard.py).  
+[examples/delete_dashboard.py](https://github.com/draios/python-sdc-client/examples/delete_dashboard.py).  
 
 #### `delete_event`
 **`(self, event)`**
@@ -160,7 +160,7 @@ Deletes an event.
 **Success Return Value**  
 `None`.  
 **Example**  
-[examples/delete_event.py](examples/delete_event.py).  
+[examples/delete_event.py](https://github.com/draios/python-sdc-client/examples/delete_event.py).  
 
 #### `get_alerts`
 **`(self)`**
@@ -170,7 +170,7 @@ Retrieve the list of alerts configured by the user.
 **Success Return Value**  
 An array of alert json objects, with the format described at [this link](https://app.sysdigcloud.com/apidocs/#!/Alerts/get_api_alerts).  
 **Example**  
-[examples/list_alerts.py](examples/list_alerts.py).  
+[examples/list_alerts.py](https://github.com/draios/python-sdc-client/examples/list_alerts.py).  
 
 #### `get_connected_agents`
 **`(self)`**
@@ -191,12 +191,12 @@ This is the method you use to export metric data. It's flexible enough to offer 
 - **end_ts**: the UTC time (in seconds) of the end of the data window, or 0 to indicate "now". A negative value can also be optionally used to indicate a relative time in the past from now. For example, -3600 means "one hour ago".
 - **sampling_s**: the duration of the samples that will be returned. 0 Means that the whole data will be returned as a single sample.
 - **filter**: a boolean expression combining Sysdig Cloud segmentation criteria defines what the query will be applied to. For example: _kubernetes.namespace.name='production' and container.image='nginx'_.
-- **datasource_type**: specify the metric source for the request, can be `container` or `host`. Most metrics, for example `cpu.used.percent` or `memory.bytes.used`, are reported by both hosts and containers. By default, host metrics are used, but if the request contains a container-specific grouping key in the metric list/filter (e.g. `container.name`), then the container source is used. In cases where grouping keys are missing or apply to both hosts and containers (e.g. `tag.Name`), datasource_type can be explicitly set to avoid any ambiguity and allow the user to select precisely what kind of data should be used for the request. [examples/get_data_datasource.py](examples/get_data_datasource.py) contains a few examples that should clarify the use of this argument.  
+- **datasource_type**: specify the metric source for the request, can be `container` or `host`. Most metrics, for example `cpu.used.percent` or `memory.bytes.used`, are reported by both hosts and containers. By default, host metrics are used, but if the request contains a container-specific grouping key in the metric list/filter (e.g. `container.name`), then the container source is used. In cases where grouping keys are missing or apply to both hosts and containers (e.g. `tag.Name`), datasource_type can be explicitly set to avoid any ambiguity and allow the user to select precisely what kind of data should be used for the request. [examples/get_data_datasource.py](https://github.com/draios/python-sdc-client/examples/get_data_datasource.py) contains a few examples that should clarify the use of this argument.  
 
 **Success Return Value**  
 A dictionary with the requested data. Data is organized in a list of time samples, each of which includes a UTC timestamp and a list of values, whose content and order reflect what was specified in the _metrics_ argument.  
 **Examples**  
-[examples/get_data_simple.py](examples/get_data_simple.py), [examples/get_data_advanced.py](examples/get_data_advanced.py), [examples/list_hosts.py](examples/list_hosts.py), [examples/get_data_datasource.py](examples/get_data_datasource.py).  
+[examples/get_data_simple.py](https://github.com/draios/python-sdc-client/examples/get_data_simple.py), [examples/get_data_advanced.py](https://github.com/draios/python-sdc-client/examples/get_data_advanced.py), [examples/list_hosts.py](https://github.com/draios/python-sdc-client/examples/list_hosts.py), [examples/get_data_datasource.py](https://github.com/draios/python-sdc-client/examples/get_data_datasource.py).  
 
 #### `get_dashboards`
 **`(self)`**
@@ -206,7 +206,7 @@ Return the list of dashboards available under the given user account. This inclu
 **Success Return Value**  
 A dictionary containing the list of available sampling intervals.  
 **Example**  
-[examples/list_dashboards.py](examples/list_dashboards.py).  
+[examples/list_dashboards.py](https://github.com/draios/python-sdc-client/examples/list_dashboards.py).  
 
 #### `get_data_retention_info`
 **`(self)`**
@@ -216,7 +216,7 @@ Return the list of data retention intervals, with beginning and end UTC time for
 **Success Return Value**  
 A dictionary containing the list of available sampling intervals.  
 **Example**  
-[examples/print_data_retention_info.py](examples/print_data_retention_info.py). 
+[examples/print_data_retention_info.py](https://github.com/draios/python-sdc-client/examples/print_data_retention_info.py). 
 
 #### `get_events`
 **`(self, name=None, from_ts=None, to_ts=None, tags=None)`**
@@ -232,7 +232,7 @@ Returns the list of Sysdig Cloud events.
 **Success Return Value**  
 A dictionary containing the list of events.  
 **Example**  
-[examples/list_events.py](examples/list_events.py). 
+[examples/list_events.py](https://github.com/draios/python-sdc-client/examples/list_events.py). 
 
 #### `get_explore_grouping_hierarchy`
 **`(self)`**
@@ -242,7 +242,7 @@ Return the user's current Explore gourping hierarchy.
 **Success Return Value**  
 A list containing the list of the user's Explore grouping criteria.  
 **Example**  
-[examples/print_explore_grouping.py](examples/print_explore_grouping.py).  
+[examples/print_explore_grouping.py](https://github.com/draios/python-sdc-client/examples/print_explore_grouping.py).  
 
 #### `get_metrics`
 **`(self)`**
@@ -252,7 +252,7 @@ Return the metric list that can be used for data requests/alerts/dashboards.
 **Success Return Value**  
 A dictionary containing the list of available metrics.  
 **Example**  
-[examples/list_metrics.py](examples/list_metrics.py).  
+[examples/list_metrics.py](https://github.com/draios/python-sdc-client/examples/list_metrics.py).  
 
 #### `get_n_connected_agents`
 **`(self)`**
@@ -276,7 +276,7 @@ Returns the list of Sysdig Cloud alert notifications.
 **Success Return Value**  
 A dictionary containing the list of notifications.  
 **Example**  
-[examples/list_alert_notifications.py](examples/list_alert_notifications.py). 
+[examples/list_alert_notifications.py](https://github.com/draios/python-sdc-client/examples/list_alert_notifications.py). 
 
 #### `get_sysdig_captures`
 **`(self)`**
@@ -286,7 +286,7 @@ Returns the list of sysdig captures for the user.
 **Success Return Value**  
 A dictionary containing the list of captures.  
 **Example**  
-[examples/list_sysdig_captures.py](examples/list_sysdig_captures.py). 
+[examples/list_sysdig_captures.py](https://github.com/draios/python-sdc-client/examples/list_sysdig_captures.py). 
 
 #### `get_user_info`
 **`(self)`**
@@ -296,7 +296,7 @@ Get details about the current user.
 **Success Return Value**  
 A dictionary containing information about the user, for example its email and the maximum number of agents it can install.  
 **Example**  
-[examples/print_user_info.py](examples/print_user_info.py).  
+[examples/print_user_info.py](https://github.com/draios/python-sdc-client/examples/print_user_info.py).  
 
 #### `find_dashboard_by`
 **`(self, name)`**
@@ -311,7 +311,7 @@ Finds dashboards with the specified name. You can then delete the dashboard (wit
 A list of dictionaries of dashboards matching the specified name.
 
 **Example**  
-[examples/dashboard.py](examples/dashboard.py).
+[examples/dashboard.py](https://github.com/draios/python-sdc-client/examples/dashboard.py).
 
 #### `poll_sysdig_capture`
 **`(self, capture)`**
@@ -324,7 +324,7 @@ Fetch the updated state of a sysdig capture. Can be used to poll the status of a
 **Success Return Value**  
 A dictionary showing the updated details of the capture. Use the `status` field to check the progress of a capture.    
 **Example**  
-[examples/create_sysdig_capture.py](examples/create_sysdig_capture.py).  
+[examples/create_sysdig_capture.py](https://github.com/draios/python-sdc-client/examples/create_sysdig_capture.py).  
 
 #### `post_event`
 **`(self, name, description=None, severity=None, event_filter=None, tags=None)`**
@@ -341,8 +341,8 @@ You can use this method you use to send an event to Sysdig Cloud. The events you
 **Success Return Value**  
 A dictionary describing the new event.  
 **Example**  
-[examples/post_event_simple.py](examples/post_event_simple.py)
-[examples/post_event.py](examples/post_event.py).  
+[examples/post_event_simple.py](https://github.com/draios/python-sdc-client/examples/post_event_simple.py)
+[examples/post_event.py](https://github.com/draios/python-sdc-client/examples/post_event.py).  
 
 #### `remove_dashboard_panel`
 **`(self, dashboard, panel_name)`**
@@ -357,7 +357,7 @@ Removes a panel from the dashboard. The panel to remove is identified by the spe
 A dictionary showing the details of the edited dashboard.
 
 **Example**  
-[examples/dashboard.py](examples/dashboard.py).
+[examples/dashboard.py](https://github.com/draios/python-sdc-client/examples/dashboard.py).
 
 #### `update_notification_resolution`
 **`(self, notification, resolved)`**
@@ -371,4 +371,4 @@ Updates the resolution status of an alert notification.
 **Success Return Value**  
 The updated notification.  
 **Example**  
-[examples/resolve_alert_notifications.py](examples/resolve_alert_notifications.py). 
+[examples/resolve_alert_notifications.py](https://github.com/draios/python-sdc-client/examples/resolve_alert_notifications.py). 
