@@ -9,4 +9,5 @@
    * Installation
    * Quick Start
    * Usage
+   * Methods
 
