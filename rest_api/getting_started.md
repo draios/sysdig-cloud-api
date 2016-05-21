@@ -36,7 +36,7 @@ xhr.addEventListener("readystatechange", function () {
 
   if (this.readyState === this.DONE) {
     // Done!
-  console.log(this.responseText);
+    console.log(this.responseText);
   }
 });
 
