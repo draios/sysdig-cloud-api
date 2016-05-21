@@ -30,10 +30,9 @@ wget --header "Authorization: Bearer 4e94n0ja-b9d7-400e-b6l1-49c047229" https://
 var xhr = new XMLHttpRequest();
 
 xhr.open("GET", "https://app.sysdigcloud.com/api/alerts/62");
-xhr.setRequestHeader("authorization", "Bearer 4e94n0ja-b9d7-400e-b6l1-49c047229");
+xhr.setRequestHeader("Authorization", "Bearer 4e94n0ja-b9d7-400e-b6l1-49c047229");
 
 xhr.addEventListener("readystatechange", function () {
-
   if (this.readyState === this.DONE) {
     // Done!
     console.log(this.responseText);
