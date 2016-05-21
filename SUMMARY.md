@@ -8,6 +8,6 @@
 * [Python Script Library](python_script_library.md)
    * [Installation](python/installation.md)
    * [Quick Start](python/quick_start.md)
-   * Usage
+   * [Usage](python/usage.md)
    * Methods
 
