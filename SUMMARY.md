@@ -9,5 +9,5 @@
    * [Installation](python/installation.md)
    * [Quick Start](python/quick_start.md)
    * [Usage](python/usage.md)
-   * Methods
+   * [Methods](python/methods.md)
 
