@@ -1,6 +1,8 @@
 # Alerts
 
-## <!-- TOC --> Get list of alerts
+<!-- toc -->
+
+## Get list of alerts
 
 **URL**: `GET /api/alerts`
 
