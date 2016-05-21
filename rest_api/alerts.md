@@ -1,6 +1,9 @@
 # Alerts
 
+**Table of Contents**
+
 <!-- toc -->
+
 
 ## Get list of alerts
 
