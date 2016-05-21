@@ -1,5 +1,10 @@
 # Getting Started
 
+**Table of Contents**
+
+<!-- toc -->
+
+
 ## Using the API
 
 API access is over HTTPS and accessed from the app.sysdigcloud.com URL or, if running the on-premises installation, through your Sysdig Cloud application server address. Data is sent and received using JSON format.
