@@ -7,7 +7,7 @@
    * [Alerts](rest_api/alerts.md)
 * [Python Script Library](python_script_library.md)
    * [Installation](python/installation.md)
-   * Quick Start
+   * [Quick Start](python/quick_start.md)
    * Usage
    * Methods
 
