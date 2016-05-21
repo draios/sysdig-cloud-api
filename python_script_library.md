@@ -7,20 +7,6 @@ A python client API for Sysdig Cloud.
 
 This module is a wrapper around the Sysdig Cloud API, which is documented [here](http://support.sysdigcloud.com/hc/en-us/articles/205233166-The-Sysdig-Cloud-API-Specification). It exposes most of the sysdig REST API functionality as an easy to use and easy to install python interface. The repository includes a rich set of examples (in the [examples](examples/) subdir) that quickly address several use cases.
 
-Installation
-------------
-#### Automatic w/ PyPI ([virtualenv](http://virtualenv.readthedocs.org/en/latest/) is recommended.)
-    pip install sdcclient
-
-#### Manual
-    git clone https://github.com/draios/python-sdc-client.git
-    pip install
-
-Quick start
------------
-- If you are interested in exporting metrics data from Sysdig Cloud, take a look at [examples/get_data_simple.py](examples/get_data_simple.py) and [examples/get_data_advanced.py](examples/get_data_advanced.py).
-- If you want to programmatically create an alert, refer to [examples/create_alert.py](examples/create_alert.py)
-- If you want to programmatically create a dashboard, refer to [examples/create_dashboard.py](examples/create_dashboard.py)
 
 Usage
 -----
