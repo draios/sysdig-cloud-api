@@ -4,7 +4,7 @@
 
 <!-- toc -->
 
-## `add_dashboard_panel`
+## add_dashboard_panel
 **`(self, dashboard, name, panel_type, metrics, scope=None, layout=None, sort_by=None, limit=None)`**
 
 **Description**  
@@ -29,7 +29,7 @@ A dictionary showing the details of the edited dashboard.
 **Example**  
 [examples/dashboard.py](https://github.com/draios/python-sdc-client/blob/master/examples/dashboard.py).
 
-## `add_email_notification_recipient`
+## add_email_notification_recipient
 **`(self, email)`**
 
 **Description**  
@@ -42,7 +42,7 @@ A dictionary showing the updated user notifications configuration.
 **Example**  
 [examples/add_notification_email.py](https://github.com/draios/python-sdc-client/blob/master/examples/add_notification_email.py).  
 
-## `create_alert`
+## create_alert
 **`(self, name, description, severity, for_atleast_s, condition, segmentby = [], segment_condition = 'ANY', user_filter = '', notify='', enabled=True, annotations={})`**
 
 **Description**  
@@ -65,7 +65,7 @@ A dictionary describing the just created alert, with the format described at [th
 **Example**  
 [examples/create_alert.py](https://github.com/draios/python-sdc-client/blob/master/examples/create_alert.py).  
 
-## `create_dashboard`
+## create_dashboard
 **`(self, name)`**
 
 **Description**  
@@ -80,7 +80,7 @@ A dictionary showing the details of the new dashboard.
 **Example**  
 [examples/dashboard.py](https://github.com/draios/python-sdc-client/blob/master/examples/dashboard.py).
 
-## `create_dashboard_from_dashboard`
+## create_dashboard_from_dashboard
 **`(self, newdashname, templatename, filter)`**
 
 **Description**  
@@ -95,7 +95,7 @@ A dictionary showing the details of the new dashboard.
 **Example**  
 [examples/create_dashboard.py](https://github.com/draios/python-sdc-client/blob/master/examples/create_dashboard.py).  
 
-## `create_dashboard_from_view`
+## create_dashboard_from_view
 **`(self, newdashname, viewname, filter)`**
 
 **Description**  
@@ -110,7 +110,7 @@ A dictionary showing the details of the new dashboard.
 **Example**  
 [examples/create_dashboard.py](https://github.com/draios/python-sdc-client/blob/master/examples/create_dashboard.py).  
 
-## `create_sysdig_capture`
+## create_sysdig_capture
 **`(self, hostname, capture_name, duration, capture_filter='', folder='/')`**
 
 **Description**  
@@ -127,7 +127,7 @@ A dictionary showing the details of the new capture.
 **Example**  
 [examples/create_sysdig_capture.py](https://github.com/draios/python-sdc-client/blob/master/examples/create_sysdig_capture.py).  
 
-## `delete_alert`
+## delete_alert
 **`(self, alert)`**
 
 **Description**  
@@ -140,7 +140,7 @@ Deletes an alert.
 **Example**  
 [examples/delete_alert.py](https://github.com/draios/python-sdc-client/blob/master/examples/delete_alert.py).  
 
-## `delete_dashboard`
+## delete_dashboard
 **`(self, dashboard)`**
 
 **Description**  
@@ -153,7 +153,7 @@ Deletes a dashboard.
 **Example**  
 [examples/delete_dashboard.py](https://github.com/draios/python-sdc-client/blob/master/examples/delete_dashboard.py).  
 
-## `delete_event`
+## delete_event
 **`(self, event)`**
 
 **Description**  
@@ -166,7 +166,7 @@ Deletes an event.
 **Example**  
 [examples/delete_event.py](https://github.com/draios/python-sdc-client/blob/master/examples/delete_event.py).  
 
-## `get_alerts`
+## get_alerts
 **`(self)`**
 
 **Description**  
@@ -176,7 +176,7 @@ An array of alert json objects, with the format described at [this link](https:/
 **Example**  
 [examples/list_alerts.py](https://github.com/draios/python-sdc-client/blob/master/examples/list_alerts.py).  
 
-## `get_connected_agents`
+## get_connected_agents
 **`(self)`**
 
 **Description**  
@@ -184,7 +184,7 @@ Return the agents currently connected to Sysdig Cloud for the current user.
 **Success Return Value**  
 A list of the agents with all their attributes.  
 
-## `get_data`
+## get_data
 **`(self, metrics, start_ts, end_ts=0, sampling_s = 0, filter='', datasource_type='host')`**
 
 **Description**  
@@ -202,7 +202,7 @@ A dictionary with the requested data. Data is organized in a list of time sample
 **Examples**  
 [examples/get_data_simple.py](https://github.com/draios/python-sdc-client/blob/master/examples/get_data_simple.py), [examples/get_data_advanced.py](https://github.com/draios/python-sdc-client/blob/master/examples/get_data_advanced.py), [examples/list_hosts.py](https://github.com/draios/python-sdc-client/blob/master/examples/list_hosts.py), [examples/get_data_datasource.py](https://github.com/draios/python-sdc-client/blob/master/examples/get_data_datasource.py).  
 
-## `get_dashboards`
+## get_dashboards
 **`(self)`**
 
 **Description**  
@@ -212,7 +212,7 @@ A dictionary containing the list of available sampling intervals.
 **Example**  
 [examples/list_dashboards.py](https://github.com/draios/python-sdc-client/blob/master/examples/list_dashboards.py).  
 
-## `get_data_retention_info`
+## get_data_retention_info
 **`(self)`**
 
 **Description**  
@@ -222,7 +222,7 @@ A dictionary containing the list of available sampling intervals.
 **Example**  
 [examples/print_data_retention_info.py](https://github.com/draios/python-sdc-client/blob/master/examples/print_data_retention_info.py). 
 
-## `get_events`
+## get_events
 **`(self, name=None, from_ts=None, to_ts=None, tags=None)`**
 
 **Description**  
@@ -238,7 +238,7 @@ A dictionary containing the list of events.
 **Example**  
 [examples/list_events.py](https://github.com/draios/python-sdc-client/blob/master/examples/list_events.py). 
 
-## `get_explore_grouping_hierarchy`
+## get_explore_grouping_hierarchy
 **`(self)`**
 
 **Description**  
@@ -248,7 +248,7 @@ A list containing the list of the user's Explore grouping criteria.
 **Example**  
 [examples/print_explore_grouping.py](https://github.com/draios/python-sdc-client/blob/master/examples/print_explore_grouping.py).  
 
-## `get_metrics`
+## get_metrics
 **`(self)`**
 
 **Description**  
@@ -258,7 +258,7 @@ A dictionary containing the list of available metrics.
 **Example**  
 [examples/list_metrics.py](https://github.com/draios/python-sdc-client/blob/master/examples/list_metrics.py).  
 
-## `get_n_connected_agents`
+## get_n_connected_agents
 **`(self)`**
 
 **Description**  
@@ -266,7 +266,7 @@ Return the number of agents currently connected to Sysdig Cloud for the current 
 **Success Return Value**  
 An integer number.  
 
-## `get_notifications`
+## get_notifications
 **`(self, from_ts, to_ts, state=None, resolved=None)`**
 
 **Description**  
@@ -282,7 +282,7 @@ A dictionary containing the list of notifications.
 **Example**  
 [examples/list_alert_notifications.py](https://github.com/draios/python-sdc-client/blob/master/examples/list_alert_notifications.py). 
 
-## `get_sysdig_captures`
+## get_sysdig_captures
 **`(self)`**
 
 **Description**  
@@ -292,7 +292,7 @@ A dictionary containing the list of captures.
 **Example**  
 [examples/list_sysdig_captures.py](https://github.com/draios/python-sdc-client/blob/master/examples/list_sysdig_captures.py). 
 
-## `get_user_info`
+## get_user_info
 **`(self)`**
 
 **Description**  
@@ -302,7 +302,7 @@ A dictionary containing information about the user, for example its email and th
 **Example**  
 [examples/print_user_info.py](https://github.com/draios/python-sdc-client/blob/master/examples/print_user_info.py).  
 
-## `find_dashboard_by`
+## find_dashboard_by
 **`(self, name)`**
 
 **Description**  
@@ -317,7 +317,7 @@ A list of dictionaries of dashboards matching the specified name.
 **Example**  
 [examples/dashboard.py](https://github.com/draios/python-sdc-client/blob/master/examples/dashboard.py).
 
-## `poll_sysdig_capture`
+## poll_sysdig_capture
 **`(self, capture)`**
 
 **Description**  
@@ -330,7 +330,7 @@ A dictionary showing the updated details of the capture. Use the `status` field 
 **Example**  
 [examples/create_sysdig_capture.py](https://github.com/draios/python-sdc-client/blob/master/examples/create_sysdig_capture.py).  
 
-## `post_event`
+## post_event
 **`(self, name, description=None, severity=None, event_filter=None, tags=None)`**
 
 **Description**  
@@ -348,7 +348,7 @@ A dictionary describing the new event.
 [examples/post_event_simple.py](https://github.com/draios/python-sdc-client/blob/master/examples/post_event_simple.py)
 [examples/post_event.py](https://github.com/draios/python-sdc-client/blob/master/examples/post_event.py).  
 
-## `remove_dashboard_panel`
+## remove_dashboard_panel
 **`(self, dashboard, panel_name)`**
 
 **Description**  
@@ -363,7 +363,7 @@ A dictionary showing the details of the edited dashboard.
 **Example**  
 [examples/dashboard.py](https://github.com/draios/python-sdc-client/blob/master/examples/dashboard.py).
 
-## `update_notification_resolution`
+## update_notification_resolution
 **`(self, notification, resolved)`**
 
 **Description**  
