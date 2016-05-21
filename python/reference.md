@@ -1,4 +1,4 @@
-# Methods
+# Reference
 
 **Table of Contents**
 
