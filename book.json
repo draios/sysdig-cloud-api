@@ -4,5 +4,10 @@
         "toc",
         "edit-link"
     ],
-    "pluginsConfig": {}
+    "pluginsConfig": {
+        "edit-link": {
+            "base": "https://github.com/draios/sysdig-cloud-api",
+            "label": "Edit Me"
+        }
+    }
 }
