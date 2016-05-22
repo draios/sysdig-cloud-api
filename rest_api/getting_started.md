@@ -9,7 +9,7 @@
 
 API access is over HTTPS and accessed from the app.sysdigcloud.com URL or, if running the on-premises installation, through your Sysdig Cloud application server address. Data is sent and received using JSON format.
 
-The token is required to your access to Sysdig Cloud via the api. Pass the token to the HTTPS server via the "Authorization:" header with the format:
+The token is required to your access to Sysdig Cloud via the api. Pass the token to the HTTPS server via the `Authorization` header with the format:
 
 ```
 Authorization: Bearer [token]
