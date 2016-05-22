@@ -6,7 +6,7 @@
     ],
     "pluginsConfig": {
         "edit-link": {
-            "base": "https://github.com/draios/sysdig-cloud-api",
+            "base": "https://github.com/draios/sysdig-cloud-api/edit/master",
             "label": "Edit Me"
         }
     }
