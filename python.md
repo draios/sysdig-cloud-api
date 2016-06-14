@@ -9,7 +9,7 @@ This module is a wrapper around the Sysdig Cloud API, which is documented [here]
 
 ## Table of contents
 
-* [Installation](installation.md)
-* [Quick Start](quick_start.md)
-* [Usage](usage.md)
-* [Reference](reference.md)
+* [Installation](python/installation.md)
+* [Quick Start](python/quick_start.md)
+* [Usage](python/usage.md)
+* [Reference](python/reference.md)
