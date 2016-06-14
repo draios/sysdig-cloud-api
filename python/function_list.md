@@ -1,4 +1,4 @@
-# Reference
+# Function List
 
 **Table of Contents**
 
