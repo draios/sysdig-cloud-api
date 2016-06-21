@@ -256,6 +256,7 @@ Request body parameters plus the following:
   * `SNS` for aws sns notifications
   * `PAGER_DUTY` for pager duty notifications
   * `SLACK` for slack notifications
+  * `VICTOROPS` for victorOps notifications
 * `name`: Optional name of the notification channel; Note that notification channel names must be unique and no more than 255 characters
 * `enabled`: `true` if the notification channel is being processed and events can fire; `false` otherwise
 * `options`: this contains different properties related to the different notification channel type:
