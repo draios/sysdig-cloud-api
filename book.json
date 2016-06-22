@@ -1,8 +1,7 @@
 {
     "plugins": [
-      "anchors",
-      "edit-link",
-      "page-toc"
+        "edit-link",
+        "page-toc"
     ],
     "pluginsConfig": {
         "edit-link": {
