@@ -68,12 +68,13 @@ GET /api/notificationChannels/
         * `SLACK`
         **    `channel` slack channel name
         **    `notifyOnOk` boolean flag to receive a notification message when the notification state changed from ACTIVE to OK
+        **    `url`  slack incoming webhook url endpoint (https://api.slack.com/incoming-webhooks)
         * `PAGER_DUTY`
         **    `channel` pagerDuty channel name
         **    `resolveOnOk` boolean flag to send a notification to resolve the incident in PD when the notification state changed from ACTIVE to OK
         * `VICTOROPS`
-        **    `apiKey` api key retrieved from VictorOps integration settings page
-        **    `routingKey` routing key retrieved from VictorOps integration settings page 
+        **    `apiKey` mandatory api key retrieved from VictorOps integration settings page
+        **    `routingKey` mandatory routing key retrieved from VictorOps integration settings page 
         **    `resolveOnOk` boolean flag to send a notification to resolve the incident in VictorOps when the notification state changed from ACTIVE to OK
  
 **Note**: The notification channels can be enabled by the alert
@@ -147,6 +148,7 @@ Type: SLACK
     "options": {
       "notifyOnOk": false,
       "channel": "slackin"
+      "url" : "https://hooks.slack.com/TXXXXX/BXXXXX/XXXXXXXXXX/"
     }
   }
 }
@@ -167,7 +169,8 @@ Type: PAGER_DUTY
     "options": {
       "account": "draios-test",
       "serviceKey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-      "serviceName": "Sergio-test"
+      "serviceName": "Sergio-test",
+      "resolveOnOk": true
     }
   }
 }
@@ -219,13 +222,14 @@ Type: VICTOROPS
         **    `snsTopicARNs` is a list of AWS SNS arn topics
         * `SLACK`
         **    `channel` slack channel name
-        **    `notifyOnOk` boolean flag to receive a notification message when the notification state changed from ACTIVE to OK
+        **    `notifyOnOk` mandatory boolean flag to receive a notification message when the notification state changed from ACTIVE to OK
+        **    `url`  slack incoming webhook url endpoint (https://api.slack.com/incoming-webhooks)
         * `PAGER_DUTY`
         **    `channel` pagerDuty channel name
         **    `resolveOnOk` boolean flag to send a notification to resolve the incident in PD when the notification state changed from ACTIVE to OK
         * `VICTOROPS`
-        **    `apiKey` api key retrieved from VictorOps integration settings page
-        **    `routingKey` routing key retrieved from VictorOps integration settings page 
+        **    `apiKey` mandatory api key retrieved from VictorOps integration settings page
+        **    `routingKey` mandatory routing key  retrieved from VictorOps integration settings page 
         **    `resolveOnOk` boolean flag to send a notification to resolve the incident in VictorOps when the notification state changed from ACTIVE to OK
 
 **Response parameters**
@@ -242,7 +246,9 @@ Request body parameters plus the following:
 * `404 Not Found` notification channel ID not found
 * `422 Name length must be between 1 and 255 characters` wrong length name
 * `422 The parameter notificationChannel.type is set to an invalid value. Valid values are: EMAIL|PAGER_DUTY|SLACK|SNS|VICTOROPS` not allowed notificationChannel.type
-
+* `422 The url endpoint is not valid. It should start with: 'https://hooks.slack.com/services/` not allowed url endpoint
+* `422 The apiKey is missing inside options` apiKey is mandatory for victorOps channel
+* `422 The routingKey is missing inside options` routingKey is mandatory for victorOps channel
 
 ## Modify notification channel
 
@@ -269,6 +275,7 @@ Request body parameters plus the following:
         * `SLACK`
         **    `channel` slack channel name
         **    `notifyOnOk` boolean flag to receive a notification message when the notification state changed from ACTIVE to OK
+        **    `url`  slack incoming webhook url endpoint (https://api.slack.com/incoming-webhooks)
         * `PAGER_DUTY`
         **    `channel` pagerDuty channel name
         **    `resolveOnOk` boolean flag to send a notification to resolve the incident in PD when the notification state changed from ACTIVE to OK
@@ -294,6 +301,11 @@ It is not possible to modify the slack channel name
 * `409 Conflict version` wrong version number
 * `422 Name length must be between 1 and 255 characters` wrong length name
 * `422 The parameter notificationChannel.type is set to an invalid value. Valid values are: EMAIL|PAGER_DUTY|SLACK|SNS|VICTOROPS` not allowed notificationChannel.type
+* `422 The url endpoint is not valid. It should start with: 'https://hooks.slack.com/services/` not allowed url endpoint
+* `422 The apiKey is missing inside options` apiKey is mandatory for victorOps channel
+* `422 The routingKey is missing inside options` routingKey is mandatory for victorOps channel
+* `422 Missing notification channel id` missing notification channel id
+
 
 ## Delete notification channel
 
