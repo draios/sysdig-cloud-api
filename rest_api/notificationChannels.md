@@ -205,41 +205,13 @@ Type: VICTOROPS
 
 **Request url parameters**: None
 
-**Response body parameters**:
+**Request body parameters**: All the response body parameters specified in Get notification channel except:
+  * `id`
+  * `version`
+  * `createdOn`
+  * `modifiedOn`
 
-* `type`: Type of notification channels; Valid values are:
-  * `EMAIL` for email notifications
-  * `SNS` for aws sns notifications
-  * `PAGER_DUTY` for pager duty notifications
-  * `SLACK` for slack notifications
-  * `VICTOROPS` for victorOps notifications
-* `name`: Optional name of the notification channel; Note that notification channel names must be unique and no more than 255 characters
-* `enabled`: `true` if the notification channel is being processed and events can fire; `false` otherwise
-* `options`: this contains different properties related to the different notification channel type:
-        * `EMAIL`
-        **    `emailRecipients` is a list of email addresses
-        * `SNS`
-        **    `snsTopicARNs` is a list of AWS SNS arn topics
-        * `SLACK`
-        **    `channel` slack channel name
-        **    `notifyOnOk` mandatory boolean flag to receive a notification message when the notification state changed from ACTIVE to OK
-        **    `url`  slack incoming webhook url endpoint (https://api.slack.com/incoming-webhooks)
-        * `PAGER_DUTY`
-        **    `channel` pagerDuty channel name
-        **    `resolveOnOk` boolean flag to send a notification to resolve the incident in PD when the notification state changed from ACTIVE to OK
-        * `VICTOROPS`
-        **    `apiKey` mandatory api key retrieved from VictorOps integration settings page
-        **    `routingKey` mandatory routing key  retrieved from VictorOps integration settings page 
-        **    `resolveOnOk` boolean flag to send a notification to resolve the incident in VictorOps when the notification state changed from ACTIVE to OK
-
-**Response parameters**
-
-Request body parameters plus the following:
-
-* `id`: NotificationChannel ID
-* `version`: Revision version of the notification channel configuration
-* `createdOn`: Unix-timestamp of time when the notification channel was created
-* `modifiedOn`: Unix-timestamp of time when the notification channel was last modified
+**Response parameters**: See Get Notification Channels
 
 **Errors**
 
@@ -256,41 +228,11 @@ Request body parameters plus the following:
 
 **Request url parameters**: `id`
 
-**Request body parameters**:
-
-* `version`: Revision version of the notification channel configuration
-* `type`: Type of notification channels; Valid values are:
-  * `EMAIL` for email notifications
-  * `SNS` for aws sns notifications
-  * `PAGER_DUTY` for pager duty notifications
-  * `SLACK` for slack notifications
-  * `VICTOROPS` for victorOps notifications
-* `name`: Optional name of the notification channel; Note that notification channel names must be unique and no more than 255 characters
-* `enabled`: `true` if the notification channel is being processed and events can fire; `false` otherwise
-* `options`: this contains different properties related to the different notification channel type:
-        * `EMAIL`
-        **    `emailRecipients` is a list of email addresses
-        * `SNS`
-        **    `snsTopicARNs` is a list of AWS SNS arn topics
-        * `SLACK`
-        **    `channel` slack channel name
-        **    `notifyOnOk` boolean flag to receive a notification message when the notification state changed from ACTIVE to OK
-        **    `url`  slack incoming webhook url endpoint (https://api.slack.com/incoming-webhooks)
-        * `PAGER_DUTY`
-        **    `channel` pagerDuty channel name
-        **    `resolveOnOk` boolean flag to send a notification to resolve the incident in PD when the notification state changed from ACTIVE to OK
-        * `VICTOROPS`
-        **    `apiKey` api key retrieved from VictorOps integration settings page
-        **    `routingKey` routing key retrieved from VictorOps integration settings page 
-        **    `resolveOnOk` boolean flag to send a notification to resolve the incident in VictorOps when the notification state changed from ACTIVE to OK
-
-**Response parameters**
-
-Request body parameters plus the following:
-
-* `id`: NotificationChannel ID
-* `createdOn`: Unix-timestamp of time when the notification channel was created
-* `modifiedOn`: Unix-timestamp of time when the notification channel was last modified
+**Request body parameters**: All the response body parameters specified in Get notification channel except:
+  * `createdOn`
+  * `modifiedOn`
+  
+**Response parameters**: See the Get notification Channels 
 
 **Note**
 It is not possible to modify the slack channel name
@@ -305,7 +247,6 @@ It is not possible to modify the slack channel name
 * `422 The apiKey is missing inside options` apiKey is mandatory for victorOps channel
 * `422 The routingKey is missing inside options` routingKey is mandatory for victorOps channel
 * `422 Missing notification channel id` missing notification channel id
-
 
 ## Delete notification channel
 
