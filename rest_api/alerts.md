@@ -1,10 +1,5 @@
 # Alerts
 
-**Table of Contents**
-
-<!-- toc -->
-
-
 ## Get list of alerts
 
 **URL**: `GET /api/alerts`
