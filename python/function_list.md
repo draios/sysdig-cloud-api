@@ -1,9 +1,5 @@
 # Function List
 
-**Table of Contents**
-
-<!-- toc -->
-
 ## add_dashboard_panel
 **`(self, dashboard, name, panel_type, metrics, scope=None, layout=None, sort_by=None, limit=None)`**
 
