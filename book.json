@@ -1,7 +1,6 @@
 {
     "plugins": [
         "anchors",
-        "toc",
         "edit-link"
     ],
     "pluginsConfig": {
