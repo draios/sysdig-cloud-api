@@ -1,4 +1,9 @@
 {
+    "plugins": [
+      "anchors",
+      "edit-link",
+      "page-toc"
+    ],
     "pluginsConfig": {
         "edit-link": {
             "base": "https://github.com/draios/sysdig-cloud-api/edit/master",
