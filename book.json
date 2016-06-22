@@ -1,16 +1,11 @@
 {
     "plugins": [
-        "edit-link",
-        "page-toc"
+        "edit-link"
     ],
     "pluginsConfig": {
         "edit-link": {
             "base": "https://github.com/draios/sysdig-cloud-api/edit/master",
             "label": "Edit Me"
-        },
-        "page-toc": {
-            "selector": ".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4",
-            "position": "top"
         }
     }
 }
