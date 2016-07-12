@@ -1,9 +1,5 @@
 # Alerts
 
-**Table of Contents**
-
-<!-- toc -->
-
 ## Get list of alerts
 
 **URL**: `GET /api/alerts`
@@ -13,6 +9,7 @@
 **Response parameters**
 
 * `alerts`: List of [alert](alerts.md#get-alert) items
+
 
 ## Get alert
 
