@@ -1,5 +1,3 @@
-# Notification Channels
-
 ## Get list of Notification Channels
 
 **URL**: `GET /api/notificationChannels`
