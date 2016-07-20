@@ -1,4 +1,4 @@
-# Notification Channels
+# Notification channels
 
 ## Get list of notification channels
 
@@ -37,7 +37,7 @@ GET /api/notificationChannels/
 }
 ```
 
-## Get notification channel
+## Get one notification channel
 
 **URL**: `GET /api/notificationChannels/:id`
 
