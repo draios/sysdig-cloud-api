@@ -1,9 +1,5 @@
 # Notification Channels
 
-**Table of Contents**
-
-<!-- toc -->
-
 ## Get list of Notification Channels
 
 **URL**: `GET /api/notificationChannels`
