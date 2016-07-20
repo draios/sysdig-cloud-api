@@ -1,3 +1,5 @@
+# Notification Channels
+
 **URL**: `GET /api/notificationChannels`
 
 **Request url parameters**: None
