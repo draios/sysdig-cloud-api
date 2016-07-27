@@ -4,6 +4,7 @@
 
 * [Getting Started](rest_api/getting_started.md)
 * [Conventions](rest_api/conventions.md)
+* [Data](rest_api/data.md)
 * [Alerts](rest_api/alerts.md)
 * [Notification Channels](rest_api/notificationChannels.md)
 
