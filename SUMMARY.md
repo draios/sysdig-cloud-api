@@ -6,6 +6,7 @@
    * [Conventions](rest_api/conventions.md)
    * [Alerts](rest_api/alerts.md)
    * [Notification Channels](rest_api/notificationChannels.md)
+   * Data
 * [Python Script Library](python.md)
    * [Installation](python/installation.md)
    * [Quick Start](python/quick_start.md)
