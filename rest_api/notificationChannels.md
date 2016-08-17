@@ -54,6 +54,7 @@ GET /api/notificationChannels/
   * `PAGER_DUTY` for pager duty notifications
   * `SLACK` for slack notifications
   * `VICTOROPS` for victorOps notifications
+  * `WEBHOOK` for generic notification channel
 * `name`: Optional name of the notification channel; Note that notification channel names must be unique and no more than 255 characters
 * `enabled`: `true` if the notification channel is being processed and events can fire; `false` otherwise
 * `options`: this contains different properties related to the different notification channel type:
@@ -72,6 +73,9 @@ GET /api/notificationChannels/
         **    `apiKey` mandatory api key retrieved from VictorOps integration settings page
         **    `routingKey` mandatory routing key retrieved from VictorOps integration settings page 
         **    `resolveOnOk` boolean flag to send a notification to resolve the incident in VictorOps when the notification state changed from ACTIVE to OK
+         * `WEBHOOK`
+        **    `url` generic url endpoint
+        **    `notifyOnOk` boolean flag to send a notification to resolve the incident in VictorOps when the notification state changed from ACTIVE to OK
  
 **Note**: The notification channels can be enabled by the alert
  
