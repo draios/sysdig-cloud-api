@@ -54,12 +54,13 @@ GET /api/notificationChannels/
   * `PAGER_DUTY` for pager duty notifications
   * `SLACK` for slack notifications
   * `VICTOROPS` for victorOps notifications
+  * `OPSGENIE` for opsgenie notifications
   * `WEBHOOK` for generic notification channel
 * `name`: Optional name of the notification channel; Note that notification channel names must be unique and no more than 255 characters
 * `enabled`: `true` if the notification channel is being processed and events can fire; `false` otherwise
 * `options`: this contains different properties related to the different notification channel type:
         * `EMAIL`
-        ** `emailRecipients` is a list of email addresses
+        **    `emailRecipients` is a list of email addresses
         * `SNS`
         **    `snsTopicARNs` is a list of AWS SNS arn topics
         * `SLACK`
@@ -69,14 +70,19 @@ GET /api/notificationChannels/
         * `PAGER_DUTY`
         **    `channel` pagerDuty channel name
         **    `resolveOnOk` boolean flag to send a notification to resolve the incident in PD when the notification state changed from ACTIVE to OK
+        **    `resolveOnResolve` boolean flag to send a notification when the user marks as resolved the notification in the SDC UI
         * `VICTOROPS`
         **    `apiKey` mandatory api key retrieved from VictorOps integration settings page
         **    `routingKey` mandatory routing key retrieved from VictorOps integration settings page 
         **    `resolveOnOk` boolean flag to send a notification to resolve the incident in VictorOps when the notification state changed from ACTIVE to OK
-         * `WEBHOOK`
+        **    `resolveOnResolve` boolean flag to send a notification when the user marks as resolved the notification in the SDC UI
+        * `OPSGENIE`
+        **    `url` mandatory url endpoint to send the notifications
+        **    `notifyOnOk` boolean flag to receive a notification message when the notification state changed from ACTIVE to OK
+        * `WEBHOOK`
         **    `url` generic url endpoint
         **    `notifyOnOk` boolean flag to send a notification to resolve the incident in VictorOps when the notification state changed from ACTIVE to OK
- 
+
 **Note**: The notification channels can be enabled by the alert
  
 * `version`: Revision version of the notification channel configuration
@@ -199,6 +205,46 @@ Type: VICTOROPS
 
 ```
 
+Type: OPSGENIE
+
+```
+{
+  "notificationChannel": {
+    "id": 75,
+    "version": 1,
+    "createdOn": 1469028136000,
+    "modifiedOn": 1469028136000,
+    "type": "OPSGENIE",
+    "enabled": true,
+    "name": "opsgenieWebhook",
+    "options": {
+      "notifyOnOk": true,
+      "url": "https://api.opsgenie.com/v1/json/sysdigcloud?apiKey=<OPSGENIE_API_KEY>"
+    }
+  }
+}
+```
+
+Type: WEBHOOK
+
+```
+{
+  "notificationChannel": {
+    "id": 75,
+    "version": 1,
+    "createdOn": 1469028136000,
+    "modifiedOn": 1469028136000,
+    "type": "WEBHOOK",
+    "enabled": true,
+    "name": "genericWebhook",
+    "options": {
+      "notifyOnOk": true,
+      "url": "https://mycustomurl"
+    }
+  }
+}
+```
+
 ## Create notification channel
 
 **URL**: `POST /api/notificationChannels/`
@@ -217,7 +263,7 @@ Type: VICTOROPS
 
 * `404 Not Found` notification channel ID not found
 * `422 Name length must be between 1 and 255 characters` wrong length name
-* `422 The parameter notificationChannel.type is set to an invalid value. Valid values are: EMAIL|PAGER_DUTY|SLACK|SNS|VICTOROPS` not allowed notificationChannel.type
+* `422 The parameter notificationChannel.type is set to an invalid value. Valid values are: EMAIL|PAGER_DUTY|SLACK|SNS|VICTOROPS|OPSGENIE|WEBHOOK` not allowed notificationChannel.type
 * `422 The url endpoint is not valid. It should start with: 'https://hooks.slack.com/services/` not allowed url endpoint
 * `422 The apiKey is missing inside options` apiKey is mandatory for victorOps channel
 * `422 The routingKey is missing inside options` routingKey is mandatory for victorOps channel
@@ -242,7 +288,7 @@ It is not possible to modify the slack channel name
 * `404 Not Found` notification channel ID not found
 * `409 Conflict version` wrong version number
 * `422 Name length must be between 1 and 255 characters` wrong length name
-* `422 The parameter notificationChannel.type is set to an invalid value. Valid values are: EMAIL|PAGER_DUTY|SLACK|SNS|VICTOROPS` not allowed notificationChannel.type
+* `422 The parameter notificationChannel.type is set to an invalid value. Valid values are: EMAIL|PAGER_DUTY|SLACK|SNS|VICTOROPS|OPSGENIE|WEBHOOK` not allowed notificationChannel.type
 * `422 The url endpoint is not valid. It should start with: 'https://hooks.slack.com/services/` not allowed url endpoint
 * `422 The apiKey is missing inside options` apiKey is mandatory for victorOps channel
 * `422 The routingKey is missing inside options` routingKey is mandatory for victorOps channel
