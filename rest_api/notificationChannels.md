@@ -69,13 +69,13 @@ GET /api/notificationChannels/
         **    `url`  slack incoming webhook url endpoint (https://api.slack.com/incoming-webhooks)
         * `PAGER_DUTY`
         **    `channel` pagerDuty channel name
-        **    `resolveOnOk` boolean flag to send a notification to resolve the incident in PD when the notification state changed from ACTIVE to OK
-        **    `resolveOnResolve` boolean flag to send a notification when the user marks as resolved the notification in the SDC UI
+        **    `notifyOnOk` boolean flag to send a notification to resolve the incident in PD when the notification state changed from ACTIVE to OK
+        **    `notifyOnResolve` boolean flag to send a notification when the user marks as resolved the notification in the SDC UI
         * `VICTOROPS`
         **    `apiKey` mandatory api key retrieved from VictorOps integration settings page
         **    `routingKey` mandatory routing key retrieved from VictorOps integration settings page 
-        **    `resolveOnOk` boolean flag to send a notification to resolve the incident in VictorOps when the notification state changed from ACTIVE to OK
-        **    `resolveOnResolve` boolean flag to send a notification when the user marks as resolved the notification in the SDC UI
+        **    `notifyOnOk` boolean flag to send a notification to resolve the incident in VictorOps when the notification state changed from ACTIVE to OK
+        **    `notifyOnResolve` boolean flag to send a notification when the user marks as resolved the notification in the SDC UI
         * `OPSGENIE`
         **    `url` mandatory url endpoint to send the notifications
         **    `notifyOnOk` boolean flag to receive a notification message when the notification state changed from ACTIVE to OK
@@ -176,7 +176,7 @@ Type: PAGER_DUTY
       "account": "draios-test",
       "serviceKey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       "serviceName": "Sergio-test",
-      "resolveOnOk": true
+      "notifyOnOk": true
     }
   }
 }
@@ -196,7 +196,7 @@ Type: VICTOROPS
     "enabled": true,
     "name": "victorOpsChannel",
     "options": {
-      "resolveOnOk": true,
+      "notifyOnOk": true,
       "apiKey": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "routingKey": "myfaketeam"
     }
