@@ -30,7 +30,8 @@ GET /api/notificationChannels/
         "emailRecipients": [
           "test@sysdig.com"
         ],
-        "notifyOnOk": false
+        "notifyOnOk": false,
+        "notifyOnResolve": false
       }
     }
   ]
@@ -61,11 +62,16 @@ GET /api/notificationChannels/
 * `options`: this contains different properties related to the different notification channel type:
         * `EMAIL`
         **    `emailRecipients` is a list of email addresses
+        **    `notifyOnOk` boolean flag to receive a notification message when the notification state changed from ACTIVE to OK
+        **    `notifyOnResolve` boolean flag to send a notification when the user marks as resolved the notification in the SDC UI
         * `SNS`
         **    `snsTopicARNs` is a list of AWS SNS arn topics
+        **    `notifyOnOk` boolean flag to receive a notification message when the notification state changed from ACTIVE to OK
+        **    `notifyOnResolve` boolean flag to send a notification when the user marks as resolved the notification in the SDC UI
         * `SLACK`
         **    `channel` slack channel name
         **    `notifyOnOk` boolean flag to receive a notification message when the notification state changed from ACTIVE to OK
+        **    `notifyOnResolve` boolean flag to send a notification when the user marks as resolved the notification in the SDC UI
         **    `url`  slack incoming webhook url endpoint (https://api.slack.com/incoming-webhooks)
         * `PAGER_DUTY`
         **    `channel` pagerDuty channel name
@@ -79,9 +85,11 @@ GET /api/notificationChannels/
         * `OPSGENIE`
         **    `url` mandatory url endpoint to send the notifications
         **    `notifyOnOk` boolean flag to receive a notification message when the notification state changed from ACTIVE to OK
+        **    `notifyOnResolve` boolean flag to send a notification when the user marks as resolved the notification in the SDC UI
         * `WEBHOOK`
         **    `url` generic url endpoint
-        **    `notifyOnOk` boolean flag to send a notification to resolve the incident in VictorOps when the notification state changed from ACTIVE to OK
+        **    `notifyOnOk` boolean flag to receive a notification message when the notification state changed from ACTIVE to OK
+        **    `notifyOnResolve` boolean flag to send a notification when the user marks as resolved the notification in the SDC UI
 
 **Note**: The notification channels can be enabled by the alert
  
@@ -111,7 +119,8 @@ Type: EMAIL
       "emailRecipients": [
         "sergio@sysdig.com"
       ],
-      "notifyOnOk": false
+      "notifyOnOk": false,
+      "notifyOnResolve": false
     }
   }
 }
@@ -133,7 +142,8 @@ Type: SNS
       "snsTopicARNs": [
         "arn:aws:sns:us-east-1:273107874544:sergiotest2"
       ],
-      "notifyOnOk": false
+      "notifyOnOk": false,
+      "notifyOnResolve": false
     }
   }
 }
@@ -153,6 +163,7 @@ Type: SLACK
     "name": "slackChannel",
     "options": {
       "notifyOnOk": false,
+      "notifyOnResolve": false,
       "channel": "slackin"
       "url" : "https://hooks.slack.com/TXXXXX/BXXXXX/XXXXXXXXXX/"
     }
@@ -176,7 +187,8 @@ Type: PAGER_DUTY
       "account": "draios-test",
       "serviceKey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       "serviceName": "Sergio-test",
-      "notifyOnOk": true
+      "notifyOnOk": true,
+      "notifyOnResolve": false
     }
   }
 }
@@ -197,6 +209,7 @@ Type: VICTOROPS
     "name": "victorOpsChannel",
     "options": {
       "notifyOnOk": true,
+      "notifyOnResolve" : false,
       "apiKey": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "routingKey": "myfaketeam"
     }
@@ -219,6 +232,7 @@ Type: OPSGENIE
     "name": "opsgenieWebhook",
     "options": {
       "notifyOnOk": true,
+      "notifyOnResolve": false,
       "url": "https://api.opsgenie.com/v1/json/sysdigcloud?apiKey=<OPSGENIE_API_KEY>"
     }
   }
@@ -239,6 +253,7 @@ Type: WEBHOOK
     "name": "genericWebhook",
     "options": {
       "notifyOnOk": true,
+      "notifyOnResolve": false,
       "url": "https://mycustomurl"
     }
   }
