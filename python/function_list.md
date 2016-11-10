@@ -92,6 +92,21 @@ A dictionary showing the details of the new dashboard.
 **Example**  
 [examples/create_dashboard.py](https://github.com/draios/python-sdc-client/blob/master/examples/create_dashboard.py).  
 
+## create_dashboard_from_file
+**`(self, newdashname, filename, filter, shared=False)`**
+
+**Description**  
+Create a new dasboard using a dashboard template saved to disk.  
+**Arguments**  
+- **newdashname**: the name of the dashboard that will be created.
+- **filter**: a boolean expression combining Sysdig Cloud segmentation criteria defines what the new dasboard will be applied to. For example: kubernetes.namespace.name='production' and container.image='nginx'.  
+- **shared**: if set to True, the new dashboard will be a shared one.
+
+**Success Return Value**  
+A dictionary showing the details of the new dashboard.  
+**Example**  
+examples/dashboard_save_load.py
+
 ## create_dashboard_from_view
 **`(self, newdashname, viewname, filter, shared=False)`**
 
@@ -107,21 +122,6 @@ Create a new dasboard using one of the Sysdig Cloud views as a template. You wil
 A dictionary showing the details of the new dashboard.  
 **Example**  
 [examples/create_dashboard.py](https://github.com/draios/python-sdc-client/blob/master/examples/create_dashboard.py).  
-
-## create_dashboard_from_file
-**`(self, newdashname, filename, filter, shared=False)`**
-
-**Description**  
-Create a new dasboard using a dashboard template saved to disk.  
-**Arguments**  
-- **newdashname**: the name of the dashboard that will be created.
-- **filter**: a boolean expression combining Sysdig Cloud segmentation criteria defines what the new dasboard will be applied to. For example: kubernetes.namespace.name='production' and container.image='nginx'.  
-- **shared**: if set to True, the new dashboard will be a shared one.
-
-**Success Return Value**  
-A dictionary showing the details of the new dashboard.  
-**Example**  
-examples/dashboard_save_load.py
 
 ## create_sysdig_capture
 **`(self, hostname, capture_name, duration, capture_filter='', folder='/')`**
@@ -315,6 +315,14 @@ A dictionary containing information about the user, for example its email and th
 **Example**  
 [examples/print_user_info.py](https://github.com/draios/python-sdc-client/blob/master/examples/print_user_info.py).  
 
+## get_user_token
+**`(self)`**
+
+**Description**  
+Return the API token of the current user.  
+**Success Return Value**  
+A string containing the user token.  
+
 ## find_dashboard_by
 **`(self, name)`**
 
@@ -375,6 +383,15 @@ A dictionary showing the details of the edited dashboard.
 
 **Example**  
 [examples/dashboard.py](https://github.com/draios/python-sdc-client/blob/master/examples/dashboard.py).
+
+## set_explore_grouping_hierarchy
+**`(self, new_hierarchy)`**
+
+**Description**  
+Changes the grouping hierarchy in the explore panel od the current user.
+
+**Arguments**  
+- **new_hierarchy**: a list of sysdig segmentation metrics indicating the new grouping hierarchy.
 
 ## update_notification_resolution
 **`(self, notification, resolved)`**
