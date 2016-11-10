@@ -91,6 +91,19 @@ A dictionary showing the details of the new dashboard.
 **Example**  
 [examples/create_dashboard.py](https://github.com/draios/python-sdc-client/blob/master/examples/create_dashboard.py).  
 
+## create_dashboard_from_file
+**`(self, newdashname, filename, filter)`**
+
+**Description**  
+Create a new dasboard using a dashboard template saved to disk.  
+**Arguments**  
+- **newdashname**: the name of the dashboard that will be created.
+- **filter**: a boolean expression combining Sysdig Cloud segmentation criteria defines what the new dasboard will be applied to. For example: kubernetes.namespace.name='production' and container.image='nginx'.  
+**Success Return Value**  
+A dictionary showing the details of the new dashboard.  
+**Example**  
+examples/dashboard_save_load.py
+
 ## create_dashboard_from_view
 **`(self, newdashname, viewname, filter)`**
 
