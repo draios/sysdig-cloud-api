@@ -77,7 +77,7 @@ A dictionary showing the details of the new dashboard.
 [examples/dashboard.py](https://github.com/draios/python-sdc-client/blob/master/examples/dashboard.py).
 
 ## create_dashboard_from_dashboard
-**`(self, newdashname, templatename, filter)`**
+**`(self, newdashname, templatename, filter, shared=False)`**
 
 **Description**  
 Create a new dasboard using one of the existing dashboards as a template. You will be able to define the scope of the new dasboard.  
@@ -85,27 +85,15 @@ Create a new dasboard using one of the existing dashboards as a template. You wi
 - **newdashname**: the name of the dashboard that will be created.
 - **viewname**: the name of the dasboard to use as the template, as it appears in the Sysdig Cloud dashboard page.
 - **filter**: a boolean expression combining Sysdig Cloud segmentation criteria defines what the new dasboard will be applied to. For example: _kubernetes.namespace.name='production' and container.image='nginx'_.
+- **shared**: if set to True, the new dashboard will be a shared one.
 
 **Success Return Value**  
 A dictionary showing the details of the new dashboard.  
 **Example**  
 [examples/create_dashboard.py](https://github.com/draios/python-sdc-client/blob/master/examples/create_dashboard.py).  
 
-## create_dashboard_from_file
-**`(self, newdashname, filename, filter)`**
-
-**Description**  
-Create a new dasboard using a dashboard template saved to disk.  
-**Arguments**  
-- **newdashname**: the name of the dashboard that will be created.
-- **filter**: a boolean expression combining Sysdig Cloud segmentation criteria defines what the new dasboard will be applied to. For example: kubernetes.namespace.name='production' and container.image='nginx'.  
-**Success Return Value**  
-A dictionary showing the details of the new dashboard.  
-**Example**  
-examples/dashboard_save_load.py
-
 ## create_dashboard_from_view
-**`(self, newdashname, viewname, filter)`**
+**`(self, newdashname, viewname, filter, shared=False)`**
 
 **Description**  
 Create a new dasboard using one of the Sysdig Cloud views as a template. You will be able to define the scope of the new dasboard.  
@@ -113,11 +101,27 @@ Create a new dasboard using one of the Sysdig Cloud views as a template. You wil
 - **newdashname**: the name of the dashboard that will be created.
 - **viewname**: the name of the view to use as the template for the new dashboard. Thia corresponds to the name that the view has in the explore page.
 - **filter**: a boolean expression combining Sysdig Cloud segmentation criteria defines what the new dasboard will be applied to. For example: _kubernetes.namespace.name='production' and container.image='nginx'_.
+- **shared**: if set to True, the new dashboard will be a shared one.
 
 **Success Return Value**  
 A dictionary showing the details of the new dashboard.  
 **Example**  
 [examples/create_dashboard.py](https://github.com/draios/python-sdc-client/blob/master/examples/create_dashboard.py).  
+
+## create_dashboard_from_file
+**`(self, newdashname, filename, filter, shared=False)`**
+
+**Description**  
+Create a new dasboard using a dashboard template saved to disk.  
+**Arguments**  
+- **newdashname**: the name of the dashboard that will be created.
+- **filter**: a boolean expression combining Sysdig Cloud segmentation criteria defines what the new dasboard will be applied to. For example: kubernetes.namespace.name='production' and container.image='nginx'.  
+- **shared**: if set to True, the new dashboard will be a shared one.
+
+**Success Return Value**  
+A dictionary showing the details of the new dashboard.  
+**Example**  
+examples/dashboard_save_load.py
 
 ## create_sysdig_capture
 **`(self, hostname, capture_name, duration, capture_filter='', folder='/')`**
