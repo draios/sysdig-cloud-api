@@ -393,6 +393,15 @@ Changes the grouping hierarchy in the explore panel od the current user.
 **Arguments**  
 - **new_hierarchy**: a list of sysdig segmentation metrics indicating the new grouping hierarchy.
 
+## switch_user_team
+**`(self, new_team_id)`**
+
+**Description**  
+Switches the current user context to the given team. In other words, this function makes it possible to start operating in the context of a different team without having to use the token of that team.
+
+**Arguments**  
+- **new_team_id**: the ID of the team to switch to.
+
 ## update_notification_resolution
 **`(self, notification, resolved)`**
 
