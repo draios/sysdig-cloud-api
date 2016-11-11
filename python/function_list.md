@@ -393,6 +393,115 @@ Changes the grouping hierarchy in the explore panel od the current user.
 **Arguments**  
 - **new_hierarchy**: a list of sysdig segmentation metrics indicating the new grouping hierarchy.
 
+## create_team
+**`(self, name, users, filter, description, show, theme)`**
+
+**Description**  
+Creates a new team
+
+**Arguments**  
+- **name**: the name of the team to create.
+- **users**: list of user names to add to the team.
+- **filter**: the scope that this team is able to access within Sysdig cloud.
+- **description**: describes the team that will be created.
+- **show**: possible values are HOST, CONTAINER.
+- **theme**: the color theme that Sysdig cloud will use when displaying the team.
+
+**Success Return Value**  
+The newly created team.
+
+**Example**  
+[examples/user_team_mgmt.py](https://github.com/draios/python-sdc-client/blob/master/examples/user_team_mgmt.py). 
+
+## edit_team
+**`(self, name, users, filter, description, show, theme)`**
+
+**Description**  
+Edits an existing team
+
+**Arguments**  
+- **name**: the name of the team to create.
+- **users**: list of user names to add to the team.
+- **filter**: the scope that this team is able to access within Sysdig cloud.
+- **description**: describes the team that will be created.
+- **show**: possible values are HOST, CONTAINER.
+- **theme**: the color theme that Sysdig cloud will use when displaying the team.
+
+**Success Return Value**  
+The edited team.
+
+**Example**  
+[examples/user_team_mgmt.py](https://github.com/draios/python-sdc-client/blob/master/examples/user_team_mgmt.py). 
+
+## delete_team
+**`(self, name)`**
+
+**Description**  
+Deletes a team from Sysdig cloud.
+
+**Arguments**  
+- **name**: the team that will be deleted from Sysdig cloud
+
+**Example**  
+[examples/user_team_mgmt.py](https://github.com/draios/python-sdc-client/blob/master/examples/user_team_mgmt.py). 
+
+## create_user_invite
+**`(self, user_email)`**
+
+**Description**  
+Invites a new users to use Sysdig cloud. This should result in an email notification to the specified email.
+
+**Arguments**  
+- **user_email**: the email address of the user that will be invited to use Sysdig cloud
+
+**Success Return Value**  
+The newly created user.
+
+**Example**  
+[examples/user_team_mgmt.py](https://github.com/draios/python-sdc-client/blob/master/examples/user_team_mgmt.py). 
+
+## delete_user
+**`(self, user_email)`**
+
+**Description**  
+Deletes a user from Sysdig cloud.
+
+**Arguments**  
+- **user_email**: the email address of the user that will be deleted from Sysdig cloud
+
+**Example**  
+[examples/user_team_mgmt.py](https://github.com/draios/python-sdc-client/blob/master/examples/user_team_mgmt.py). 
+
+## get_teams
+**`(self, team_filter)`**
+
+**Description**  
+Return the set of teams that match the filter specified. The team_filter should be a substring of the team for the team to be returned.
+
+**Arguments**  
+- **team_filter**: the team filter to match when returning the list of teams
+
+**Success Return Value**  
+The teams that match the filter.
+
+## get_team
+**`(self, team_name)`**
+
+**Description**  
+Return the team with the specified team name if it is present
+
+**Arguments**  
+- **team_name**: the team name to return
+
+**Success Return Value**  
+The requested team.
+
+**Example**  
+[examples/user_team_mgmt.py](https://github.com/draios/python-sdc-client/blob/master/examples/user_team_mgmt.py). 
+
+
+
+
 ## switch_user_team
 **`(self, new_team_id)`**
 
