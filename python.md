@@ -12,4 +12,4 @@ This module is a wrapper around the Sysdig Cloud API, which is documented [here]
 * [Installation](python/installation.md)
 * [Quick Start](python/quick_start.md)
 * [Usage](python/usage.md)
-* [Function List](python/function_list.md)
+* [Function List](http://python-sdc-client.readthedocs.io/en/latest/)
