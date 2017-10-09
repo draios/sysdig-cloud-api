@@ -2,7 +2,18 @@
 
 **Note** : You can use our Python client to create, list, delete, update and restore Alerts https://github.com/draios/python-sdc-client/tree/master/examples
 
+## Create an alert
+**URL to Python Script**: https://github.com/draios/python-sdc-client/blob/master/examples/create_alert.py
+
+
+## Update an alert
+**URL to Python Script**: https://github.com/draios/python-sdc-client/blob/master/examples/update_alert.py
+
+
 ## Get list of alerts
+**URL to Python Script**: https://github.com/draios/python-sdc-client/blob/master/examples/list_alerts.py
+
+Details of the API: 
 
 **URL**: `GET /api/alerts`
 
@@ -82,4 +93,12 @@ GET /api/alerts/123
     }
 }
 ```
+
+## Delete an alert
+**URL to Python Script**: https://github.com/draios/python-sdc-client/blob/master/examples/delete_alert.py
+
+
+## Restore alerts
+**URL to Python Script**: https://github.com/draios/python-sdc-client/blob/master/examples/restore_alerts.py
+
 
