@@ -237,6 +237,8 @@ Type: VICTOROPS
 **Note**
 It is not possible to modify the slack channel name
 
+**Note** The version number must be obtained via a GET request.
+
 **Errors**
 
 * `404 Not Found` notification channel ID not found
