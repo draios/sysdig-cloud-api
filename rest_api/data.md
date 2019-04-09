@@ -1,4 +1,37 @@
 # Data API
+
+## Endpoint
+
+Data can be extracted through the following endpoint: `POST /api/data`
+
+Here's a complete example of the HTTP request to fetch a time series:
+
+```
+POST /api/data
+Authorization: Bearer TOKEN_HERE
+Content-Type: application/json
+X-Sysdig-Product: SDC
+
+{
+  "last": 600,
+  "sampling": 10,
+  "metrics": [
+    {
+      "id": "cpu.used.percent",
+      "aggregations": {
+        "time": "timeAvg",
+        "group": "avg"
+      }
+    }
+  ],
+  "dataSourceType": "host",
+  "filter": null
+}
+```
+
+The following sections will show different use cases and the related HTTP request bodies.
+
+
 ## Time window
 1. Any timestamp is expressed in seconds (Unix timestamp)
 2. `start` and `end` not required if `last` is specified
@@ -26,6 +59,7 @@
 7. if `last` is specified (i.e. last available seconds):
    1. if `last / sampling` is over the maximum number of samples (`600`) the backend returns error 
    2. if the `sampling` is not specified the backend tries to set `start` and `end` accordingly the timeline that could satisfy the maximum sample number constraint.
+
 
 ## Use cases
 The following use cases are based on the panels you can use in [Sysdig Cloud](https://app.sysdigcloud.com).
